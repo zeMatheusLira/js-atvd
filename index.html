@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios JavaScript</title>
+    <script>
+        // Função MAIOR_MENOR
+        function maiorMenor() {
+            let a = parseInt(document.getElementById('maiorMenorA').value);
+            let b = parseInt(document.getElementById('maiorMenorB').value);
+            let c = parseInt(document.getElementById('maiorMenorC').value);
+            let d = parseInt(document.getElementById('maiorMenorD').value);
+            let e = parseInt(document.getElementById('maiorMenorE').value);
+            let valores = [a, b, c, d, e];
+            let maior = Math.max(...valores);
+            let menor = Math.min(...valores);
+            alert(`Maior valor: ${maior}\nMenor valor: ${menor}`);
+        }
+
+        // Função VOGAL
+        function vogal() {
+            let c = document.getElementById('vogalChar').value.toLowerCase();
+            if ('aeiou'.includes(c)) {
+                alert('1 (Vogal)');
+            } else {
+                alert('0 (Não é vogal)');
+            }
+        }
+
+        // Função LIMITES
+        function limites() {
+            let li = parseInt(document.getElementById('limiteInferior').value);
+            let ls = parseInt(document.getElementById('limiteSuperior').value);
+            let soma = 0;
+            let pares = [];
+
+            for (let i = li + 1; i < ls; i++) {
+                if (i % 2 === 0) {
+                    pares.push(i);
+                    soma += i;
+                }
+            }
+
+            alert(`Números pares no intervalo: ${pares.join(', ')}\nSomatório: ${soma}`);
+        }
+
+        // Função ORDEM
+        function ordem() {
+            let a = parseInt(document.getElementById('ordemA').value);
+            let b = parseInt(document.getElementById('ordemB').value);
+            let c = parseInt(document.getElementById('ordemC').value);
+            let valores = [a, b, c];
+            valores.sort((x, y) => x - y);
+            alert(`Valores ordenados: ${valores.join(', ')}`);
+        }
+
+        // Função POSITIVO_NEGATIVO
+        function positivoNegativo() {
+            let x = parseInt(document.getElementById('positivoNegativoX').value);
+            if (x >= 0) {
+                alert('Positivo (true)');
+            } else {
+                alert('Negativo (false)');
+            }
+        }
+
+        // Função PAR_IMPAR
+        function parImpar() {
+            let x = parseInt(document.getElementById('parImparX').value);
+            if (x % 2 === 0) {
+                alert('Par (true)');
+            } else {
+                alert('Ímpar (false)');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Exercícios JavaScript</h1>
+    
+    <h2>Função MAIOR_MENOR</h2>
+    <input id="maiorMenorA" type="number" placeholder="Valor A">
+    <input id="maiorMenorB" type="number" placeholder="Valor B">
+    <input id="maiorMenorC" type="number" placeholder="Valor C">
+    <input id="maiorMenorD" type="number" placeholder="Valor D">
+    <input id="maiorMenorE" type="number" placeholder="Valor E">
+    <button onclick="maiorMenor()">Calcular Maior e Menor</button>
+
+    <h2>Função VOGAL</h2>
+    <input id="vogalChar" type="text" maxlength="1" placeholder="Digite um caractere">
+    <button onclick="vogal()">Verificar se é Vogal</button>
+
+    <h2>Função LIMITES</h2>
+    <input id="limiteInferior" type="number" placeholder="Limite Inferior">
+    <input id="limiteSuperior" type="number" placeholder="Limite Superior">
+    <button onclick="limites()">Calcular Pares e Somatório</button>
+
+    <h2>Função ORDEM</h2>
+    <input id="ordemA" type="number" placeholder="Valor A">
+    <input id="ordemB" type="number" placeholder="Valor B">
+    <input id="ordemC" type="number" placeholder="Valor C">
+    <button onclick="ordem()">Ordenar Valores</button>
+
+    <h2>Função POSITIVO_NEGATIVO</h2>
+    <input id="positivoNegativoX" type="number" placeholder="Digite um número">
+    <button onclick="positivoNegativo()">Verificar Positivo/Negativo</button>
+
+    <h2>Função PAR_IMPAR</h2>
+    <input id="parImparX" type="number" placeholder="Digite um número">
+    <button onclick="parImpar()">Verificar Par/Ímpar</button>
+</body>
+</html>
